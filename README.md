@@ -41,6 +41,7 @@ The models achieved the following accuracies and f1 scores:
 | Extra Trees | Individual | 44.3 | 42.8 | C=500 |
 | Gradient Boosting | Individual | 47.2 | 46.6 | C=200 |
 | Random Forest | Individual | 43.8 | 42.3 | C=200 |
+|SVM|Love Vs Disgust|98.9|98.9|C=.01|
 
 #### Big4 Classification
 The confusion matrix for Gradient Boosting on the Big4 Classification has been shown below. Notice the difficulty the model has in distinguishing between Low Control Positive Valance and High Control Positive Valance.
