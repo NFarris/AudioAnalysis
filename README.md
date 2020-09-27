@@ -1,4 +1,4 @@
-# AudioAnalysis
+# Georgia Tech Robotic Musicianship Prosody Audio Analysis
 
 ## Background
 The Robotic Musicianship group aims to facilitate meaningful musical interactions between humans and machines, leading to novel musical experiences and outcomes. In our research, we combine computational modeling approaches for perception, interaction, and improvisation, with novel approaches for generating acoustic responses in physical and visual manners.
