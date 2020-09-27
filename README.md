@@ -95,11 +95,12 @@ When tasked with categorizing between two emotions, our model performs extremely
 //TODO: Add the following sections to each of the features listed below: Description, Why is this feature important?, Algorithm for extraction
 ### Zero Crossing Rate
 #### Description
-
+Zero Crossing Rate is the rate of sign-changes across a signal (the rate at which the signal changes from positive negative or from negative to positive). 
 #### Why is this important?
-
+This feature is key in classifying percussive sounds. //TODO expand this section
 #### Algorithm
-
+$$
+zcr = \frac{1}{T-1}$$
 #### Example Extraction
 
 ### Energy
