@@ -99,8 +99,7 @@ Zero Crossing Rate is the rate of sign-changes across a signal (the rate at whic
 #### Why is this important?
 This feature is key in classifying percussive sounds. //TODO expand this section
 #### Algorithm
-$$
-zcr = \frac{1}{T-1}$$
+![](https://wikimedia.org/api/rest_v1/media/math/render/svg/cda9c9054c26350f517732f08eb791d232b7c1ba)
 #### Example Extraction
 
 ### Energy
