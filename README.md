@@ -100,6 +100,15 @@ Zero Crossing Rate is the rate of sign-changes across a signal (the rate at whic
 This feature is key in classifying percussive sounds. //TODO expand this section
 #### Algorithm
 ![](https://wikimedia.org/api/rest_v1/media/math/render/svg/cda9c9054c26350f517732f08eb791d232b7c1ba)
+
+where 's' is a signal of length 'T' and '1_r<0' is an indicator function
+
+In Python:
+
+    def zero_crossing_rate(frame):
+        count = len(frame)
+        count_zero = np.sum(np.abs(np.diff(np.sign(frame)))) / 2
+        return np.float64(count_zero) / np.float64(count - 1.0)
 #### Example Extraction
 
 ### Energy
