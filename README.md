@@ -100,6 +100,8 @@ When tasked with categorizing between two emotions, our model performs extremely
 
 #### Algorithm
 
+#### Example Extraction
+
 ### Energy
 #### Description
 
