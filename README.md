@@ -107,12 +107,16 @@ When tasked with categorizing between two emotions, our model performs extremely
 
 #### Algorithm
 
+#### Example Extraction
+
 ### Entropy of Energy
 #### Description
 
 #### Why is this important?
 
 #### Algorithm
+
+#### Example Extraction
 
 ### Spectral Centroid
 #### Description
@@ -121,12 +125,16 @@ When tasked with categorizing between two emotions, our model performs extremely
 
 #### Algorithm
 
+#### Example Extraction
+
 ### Spectral Entropy
 #### Description
 
 #### Why is this important?
 
 #### Algorithm
+
+#### Example Extraction
 
 ### Spectral Flux
 #### Description
@@ -135,12 +143,16 @@ When tasked with categorizing between two emotions, our model performs extremely
 
 #### Algorithm
 
+#### Example Extraction
+
 ### Spectral Rolloff
 #### Description
 
 #### Why is this important?
 
 #### Algorithm
+
+#### Example Extraction
 
 ### Mel Frequency Cepstral Coefficients
 #### Description
@@ -149,6 +161,8 @@ When tasked with categorizing between two emotions, our model performs extremely
 
 #### Algorithm
 
+#### Example Extraction
+
 ### Chroma Vector
 #### Description
 
@@ -156,9 +170,13 @@ When tasked with categorizing between two emotions, our model performs extremely
 
 #### Algorithm
 
+#### Example Extraction
+
 ### Chroma Deviation
 #### Description
 
 #### Why is this important?
 
 #### Algorithm
+
+#### Example Extraction
