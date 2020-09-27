@@ -11,7 +11,7 @@ The purpose of this repository is to provide documentation for the work performe
 ## Methodology
 During the summer of 2020, a 4.4 hour long dataset containing hundreds of audio clips labeled with a specific emotion was collected. This dataset, and more to come, will serve as the backbone for the models and algorithms generated this semester of Fall 2020. 
 
-### Results from PyAudioAnalysis Feature Extraction and Model Training
+## Results from PyAudioAnalysis Feature Extraction and Model Training
 During the first week with this dataset, our team decided to explore the accuracy of various classification models implemented by the popular python library PyAudioAnalysis. We trained and tested the following types of models: KNN, SVM, Random Forests, Extra Trees, and Gradient Boosting. Additionally we trained with two types of classification: All 20 emotions separated individually and the 20 emotions divided into 4 categories determined by the intersection of control and valance. The categories can be visualized as follows: 
 | High Control, Negative Valance | High Control, Positive Valance | Low Control, Negative Valance | Low Control, Positive Valance |
 |---|---|---|---|
@@ -43,7 +43,7 @@ The models achieved the following accuracies and f1 scores:
 | Random Forest | Individual | 43.8 | 42.3 | C=200 |
 |SVM|Love Vs Disgust|98.9|98.9|C=.01|
 
-#### Big4 Classification
+### Big4 Classification
 The confusion matrix for Gradient Boosting on the Big4 Classification has been shown below. Notice the difficulty the model has in distinguishing between Low Control Positive Valance and High Control Positive Valance.
 
 ||HCN|HCP|LCN|LCP|
@@ -53,7 +53,7 @@ The confusion matrix for Gradient Boosting on the Big4 Classification has been s
 |LCN|2.87|2.13|15.66|2.30|
 |LCP|1.39|5.16|2.62|15.41|
 
-#### Individual Classification
+### Individual Classification
 The confusion matrix for SVM on the Individual Classification has been shown below. Although this can be hard to read, it is useful to visualize which emotions are being confused for each other. A few interesting observations include: 
 
 - Disgust is rarely confused with other emotions. 
@@ -83,9 +83,82 @@ The confusion matrix for SVM on the Individual Classification has been shown bel
 |Sad|0.00|0.00|0.33|0.08|0.00|0.16|0.24|0.16|0.00|0.00|0.24|0.24|0.00|0.08|0.00|0.00|0.00|0.24|1.71|0.16|
 |Sha|0.08|0.00|0.08|0.16|0.16|0.33|0.24|0.08|0.65|0.33|0.16|0.00|0.00|0.16|0.08|0.33|0.33|0.08|0.08|1.55|
 
-#### Disgust vs Love Classification
+### Disgust vs Love Classification
 When tasked with categorizing between two emotions, our model performs extremely well. Achieving accuracies as high as 98.9% with a f1 of 98.9 in the distinction between Love and Disgust using a SVM. This reinforces the intuition that by reducing the number of emotional categories we can achieve exceptionally high accuracies for identification. The confusion matrix is shown below:
 ||Dis|Love|
 |---|---|---|
 |Dis|54.03|1.14|
 |Love|0.00|44.83|
+
+
+## Understanding Feature Extraction 
+//TODO: Add the following sections to each of the features listed below: Description, Why is this feature important?, Algorithm for extraction
+### Zero Crossing Rate
+#### Description
+
+#### Why is this important?
+
+#### Algorithm
+
+### Energy
+#### Description
+
+#### Why is this important?
+
+#### Algorithm
+
+### Entropy of Energy
+#### Description
+
+#### Why is this important?
+
+#### Algorithm
+
+### Spectral Centroid
+#### Description
+
+#### Why is this important?
+
+#### Algorithm
+
+### Spectral Entropy
+#### Description
+
+#### Why is this important?
+
+#### Algorithm
+
+### Spectral Flux
+#### Description
+
+#### Why is this important?
+
+#### Algorithm
+
+### Spectral Rolloff
+#### Description
+
+#### Why is this important?
+
+#### Algorithm
+
+### Mel Frequency Cepstral Coefficients
+#### Description
+
+#### Why is this important?
+
+#### Algorithm
+
+### Chroma Vector
+#### Description
+
+#### Why is this important?
+
+#### Algorithm
+
+### Chroma Deviation
+#### Description
+
+#### Why is this important?
+
+#### Algorithm
