@@ -106,9 +106,11 @@ where 's' is a signal of length 'T' and '1_r<0' is an indicator function
 In Python:
 
     def zero_crossing_rate(frame):
+        """Computes zero crossing rate of frame"""
         count = len(frame)
         count_zero = np.sum(np.abs(np.diff(np.sign(frame)))) / 2
         return np.float64(count_zero) / np.float64(count - 1.0)
+
 #### Example Extraction
 //TODO
 ### Energy
@@ -124,6 +126,7 @@ Unit of E_s will be (unit of signal)^2.
 In Python:
 
     def energy(frame):
+        """Computes signal energy of frame"""
         return np.sum(frame ** 2) / np.float64(len(frame))
 
 #### Example Extraction
@@ -139,6 +142,8 @@ The entropy of energy is defined as the average level of "information" or "uncer
 In Python:
 
     def energy_entropy(frame, n_short_blocks=10):
+        """Computes entropy of energy"""
+        # total frame energy
         frame_energy = np.sum(frame ** 2)
         frame_length = len(frame)
         sub_win_len = int(np.floor(frame_length / n_short_blocks))
@@ -162,7 +167,7 @@ In Python:
 The spectral centroid characterizes a signal's spectrum, the amount of vibration at each individual frequency, defined by the spectrum's center of mass. 
 
 #### Why is this important?
-Perceptually, a spectral centroid has a connection with a sound's brightness. It follows, that this parameter serves as an indicator of musical timbre //TODO expand this section
+Perceptually, a spectral centroid has a connection with a sound's brightness. It follows, that this parameter serves as an indicator of musical timbre. //TODO expand this section
 
 #### Algorithm
 ![](https://wikimedia.org/api/rest_v1/media/math/render/svg/0a62c839a6ceafd854138264d81b2986d8cdaff1)
@@ -172,6 +177,7 @@ where x(n) represents the weighted frequency magnitude of frame number n and f(n
 In Python:
 
     def spectral_centroid_spread(fft_magnitude, sampling_rate):
+        """Computes spectral centroid of frame (given abs(FFT))"""
         ind = (np.arange(1, len(fft_magnitude) + 1)) * \
             (sampling_rate / (2.0 * len(fft_magnitude)))
 
@@ -196,10 +202,44 @@ In Python:
 //TODO
 ### Spectral Entropy
 #### Description
-
+Spectral Entropy is defined to be the entropy of the power spectral density of a signal. The power spectral density of a signal describes the distribution of power into frequency components composing that signal.
 #### Why is this important?
 
 #### Algorithm
+Power Spectral Density:
+
+![](https://wikimedia.org/api/rest_v1/media/math/render/svg/65720eba3cb58f844db7c7ec2eb67b821ff13713)
+
+where 
+
+![](https://wikimedia.org/api/rest_v1/media/math/render/svg/0b8957c65771a48df900e1a9503ccf29750e04bc)
+
+In Python:
+
+    def spectral_entropy(signal, n_short_blocks=10):
+        """Computes the spectral entropy"""
+        # number of frame samples
+        num_frames = len(signal)
+
+        # total spectral energy
+        total_energy = np.sum(signal ** 2)
+
+        # length of sub-frame
+        sub_win_len = int(np.floor(num_frames / n_short_blocks))
+        if num_frames != sub_win_len * n_short_blocks:
+            signal = signal[0:sub_win_len * n_short_blocks]
+
+        # define sub-frames (using matrix reshape)
+        sub_wins = signal.reshape(sub_win_len, n_short_blocks, order='F').copy()
+
+        # compute spectral sub-energies
+        s = np.sum(sub_wins ** 2, axis=0) / (total_energy + eps)
+
+        # compute spectral entropy
+        entropy = -np.sum(s * np.log2(s + eps))
+
+        return entropy
+
 
 #### Example Extraction
 
