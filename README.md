@@ -110,7 +110,7 @@ In Python:
         count_zero = np.sum(np.abs(np.diff(np.sign(frame)))) / 2
         return np.float64(count_zero) / np.float64(count - 1.0)
 #### Example Extraction
-
+//TODO
 ### Energy
 #### Description
 Energy is defined as the area under the squared magnitude of the considered signal
@@ -159,13 +159,41 @@ In Python:
 //TODO
 ### Spectral Centroid
 #### Description
+The spectral centroid characterizes a signal's spectrum, the amount of vibration at each individual frequency, defined by the spectrum's center of mass. 
 
 #### Why is this important?
+Perceptually, a spectral centroid has a connection with a sound's brightness. It follows, that this parameter serves as an indicator of musical timbre //TODO expand this section
 
 #### Algorithm
+![](https://wikimedia.org/api/rest_v1/media/math/render/svg/0a62c839a6ceafd854138264d81b2986d8cdaff1)
+
+where x(n) represents the weighted frequency magnitude of frame number n and f(n) represents the center frequency of that frame.
+
+In Python:
+
+    def spectral_centroid_spread(fft_magnitude, sampling_rate):
+        ind = (np.arange(1, len(fft_magnitude) + 1)) * \
+            (sampling_rate / (2.0 * len(fft_magnitude)))
+
+        Xt = fft_magnitude.copy()
+        Xt = Xt / Xt.max()
+        NUM = np.sum(ind * Xt)
+        DEN = np.sum(Xt) + eps
+
+        # Centroid:
+        centroid = (NUM / DEN)
+
+        # Spread:
+        spread = np.sqrt(np.sum(((ind - centroid) ** 2) * Xt) / DEN)
+
+        # Normalize:
+        centroid = centroid / (sampling_rate / 2.0)
+        spread = spread / (sampling_rate / 2.0)
+
+        return centroid, spread
 
 #### Example Extraction
-
+//TODO
 ### Spectral Entropy
 #### Description
 
