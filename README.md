@@ -195,9 +195,9 @@ In Python:
 
 ### Mel Frequency Cepstral Coefficients
 #### Description
-
+Mel-Frequency Cepstral Coefficient (MFCC) is an important and powerful analytical tool used in speech analysis. The significant of the MFCC is that it the distribution of analyzed frequency bands are non-linear and resembles the logarithmic hearing of humans.
 #### Why is this important?
-
+Many studies have linked the importance of MFCC analysis to emotion recognition [1][2][3]. 
 #### Algorithm
 
 #### Example Extraction
@@ -219,3 +219,10 @@ In Python:
 #### Algorithm
 
 #### Example Extraction
+
+## Works Cited (WIP)
+
+1.	F. S. A., V. K. V.R., R. S. A., A. Jayakumar and B. A. P., "Speaker Independent Automatic Emotion Recognition from Speech: A Comparison of MFCCs and Discrete Wavelet Transforms," 2009 International Conference on Advances in Recent Technologies in Communication and Computing, Kottayam, Kerala, 2009, pp. 528-531, doi: 10.1109/ARTCom.2009.231.
+2.	K. V. Krishna Kishore and P. Krishna Satish, "Emotion recognition in speech using MFCC and wavelet features," 2013 3rd IEEE International Advance Computing Conference (IACC), Ghaziabad, 2013, pp. 842-847, doi: 10.1109/IAdCC.2013.6514336.
+3.	https://doi.org/10.1016/j.procs.2015.10.020
+
