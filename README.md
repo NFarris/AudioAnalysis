@@ -113,19 +113,47 @@ In Python:
 
 ### Energy
 #### Description
-
+Energy is defined as the area under the squared magnitude of the considered signal
 #### Why is this important?
-
+//TODO
 #### Algorithm
+![](https://wikimedia.org/api/rest_v1/media/math/render/svg/41b72bb00407a25b74769848f2920bb99a0fb1be)
+
+Unit of E_s will be (unit of signal)^2.
+
+In Python:
+
+    def energy(frame):
+        return np.sum(frame ** 2) / np.float64(len(frame))
 
 #### Example Extraction
-
+//TODO
 ### Entropy of Energy
 #### Description
-
+The entropy of energy is defined as the average level of "information" or "uncertainty" inherent within a signal's energy
 #### Why is this important?
 
 #### Algorithm
+![](https://wikimedia.org/api/rest_v1/media/math/render/svg/bfe3616dee43f6287d4a4e2a557de8d48ad24926)
+
+In Python:
+
+    def energy_entropy(frame, n_short_blocks=10):
+        frame_energy = np.sum(frame ** 2)
+        frame_length = len(frame)
+        sub_win_len = int(np.floor(frame_length / n_short_blocks))
+        if frame_length != sub_win_len * n_short_blocks:
+            frame = frame[0:sub_win_len * n_short_blocks]
+
+        # sub_wins is of size [n_short_blocks x L]
+        sub_wins = frame.reshape(sub_win_len, n_short_blocks, order='F').copy()
+
+        # Compute normalized sub-frame energies:
+        s = np.sum(sub_wins ** 2, axis=0) / (frame_energy + eps)
+
+        # Compute entropy of the normalized sub-frame energies:
+        entropy = -np.sum(s * np.log2(s + eps))
+        return entropy
 
 #### Example Extraction
 
