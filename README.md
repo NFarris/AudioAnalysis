@@ -204,7 +204,7 @@ In Python:
 #### Description
 Spectral Entropy is defined to be the entropy of the power spectral density of a signal. The power spectral density of a signal describes the distribution of power into frequency components composing that signal.
 #### Why is this important?
-
+//TODO
 #### Algorithm
 Power Spectral Density:
 
@@ -242,16 +242,36 @@ In Python:
 
 
 #### Example Extraction
-
+//TODO
 ### Spectral Flux
 #### Description
+Spectral flux is a measure of the rate of change of the power spectrum of a signal. More precisely, spectral flux is usually calculated as the Euclidean distance between sequential frames.
 
 #### Why is this important?
-
+//TODO
 #### Algorithm
+//TODO Write formal definition
+
+In Python:
+
+    def spectral_flux(fft_magnitude, previous_fft_magnitude):
+        """
+        Computes the spectral flux feature of the current frame
+        ARGUMENTS:
+            fft_magnitude:            the abs(fft) of the current frame
+            previous_fft_magnitude:        the abs(fft) of the previous frame
+        """
+        # compute the spectral flux as the sum of square distances:
+        fft_sum = np.sum(fft_magnitude + eps)
+        previous_fft_sum = np.sum(previous_fft_magnitude + eps)
+        sp_flux = np.sum(
+            (fft_magnitude / fft_sum - previous_fft_magnitude /
+            previous_fft_sum) ** 2)
+
+        return sp_flux
 
 #### Example Extraction
-
+//TODO
 ### Spectral Rolloff
 #### Description
 
