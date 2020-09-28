@@ -272,12 +272,33 @@ In Python:
 
 #### Example Extraction
 //TODO
-### Spectral Rolloff
+
+### Spectral Roll-Off
 #### Description
+The spectral roll-off is defined as the frequency under which some percentage of the total energy of the spectrum is contained.
 
 #### Why is this important?
+Spectral Roll-off helps differentiate between harmonic content, characterized below the roll-off, and noisy sounds, characterized above the roll-off. //TODO Expand
 
 #### Algorithm
+
+
+In Python:
+
+    def spectral_rolloff(signal, c):
+        """Computes spectral roll-off"""
+        energy = np.sum(signal ** 2)
+        fft_length = len(signal)
+        threshold = c * energy
+        # Ffind the spectral rolloff as the frequency position 
+        # where the respective spectral energy is equal to c*totalEnergy
+        cumulative_sum = np.cumsum(signal ** 2) + eps
+        a = np.nonzero(cumulative_sum > threshold)[0]
+        if len(a) > 0:
+            sp_rolloff = np.float64(a[0]) / (float(fft_length))
+        else:
+            sp_rolloff = 0.0
+        return sp_rolloff
 
 #### Example Extraction
 
