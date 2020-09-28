@@ -308,27 +308,29 @@ Mel-Frequency Cepstral Coefficient (MFCC) is an important and powerful analytica
 #### Why is this important?
 Many studies have linked the importance of MFCC analysis to emotion recognition [1][2][3]. 
 #### Algorithm
-
+{\rm Mel}({\rm f})=2595\log_{10}(1+{\rm f}/700)\eqno{\hbox{(1)}}
 #### Example Extraction
 
 ### Chroma Vector
 #### Description
-
+The chroma vector consists of 12 coefficients representing the spectral energy in each of the 12 equal tempered pitches in western music. This allows us to understand the distribution of pitch when relating it to specific emotions.
 #### Why is this important?
-
+This allows us to understand the distribution of pitch when relating it to specific emotions.
 #### Algorithm
 
 #### Example Extraction
 
 ### Chroma Deviation
+
 #### Description
-
+The standard deviation of the 12 chroma coefficients.
 #### Why is this important?
-
+This gives insight into the distribution and spread of the spectral energy in the chroma vector.
 #### Algorithm
 
 #### Example Extraction
 
+### Chroma Deviation
 ## Works Cited (WIP)
 
 1.	F. S. A., V. K. V.R., R. S. A., A. Jayakumar and B. A. P., "Speaker Independent Automatic Emotion Recognition from Speech: A Comparison of MFCCs and Discrete Wavelet Transforms," 2009 International Conference on Advances in Recent Technologies in Communication and Computing, Kottayam, Kerala, 2009, pp. 528-531, doi: 10.1109/ARTCom.2009.231.
