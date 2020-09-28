@@ -313,8 +313,10 @@ Many studies have linked the importance of MFCC analysis to emotion recognition 
 
 ### Chroma Vector
 #### Description
+A chroma vector is an approximation of the pitch class profiles present within a given frame. In music, this can be thought of as a classification of twelve tones.
 
 #### Why is this important?
+Chroma vectors allow for the capture of harmonic and melodic characteristics while remaining robust toward changes in timbre and instrumentation.
 
 #### Algorithm
 
