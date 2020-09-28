@@ -132,7 +132,7 @@ In Python:
 #### Description
 The entropy of energy is defined as the average level of "information" or "uncertainty" inherent within a signal's energy
 #### Why is this important?
-
+//TODO
 #### Algorithm
 ![](https://wikimedia.org/api/rest_v1/media/math/render/svg/bfe3616dee43f6287d4a4e2a557de8d48ad24926)
 
@@ -156,7 +156,7 @@ In Python:
         return entropy
 
 #### Example Extraction
-
+//TODO
 ### Spectral Centroid
 #### Description
 
