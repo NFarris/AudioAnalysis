@@ -130,7 +130,7 @@ In Python:
         return np.sum(frame ** 2) / np.float64(len(frame))
 
 #### Example Extraction
-//TODO
+![](zcr.png)
 ### Entropy of Energy
 #### Description
 The entropy of energy is defined as the average level of "information" or "uncertainty" inherent within a signal's energy
@@ -313,17 +313,11 @@ Many studies have linked the importance of MFCC analysis to emotion recognition 
 
 ### Chroma Vector
 #### Description
-<<<<<<< HEAD
 A chroma vector is an approximation of the pitch class profiles present within a given frame. In music, this can be thought of as a classification of twelve tones.
 
 #### Why is this important?
 Chroma vectors allow for the capture of harmonic and melodic characteristics while remaining robust toward changes in timbre and instrumentation.
 
-=======
-The chroma vector consists of 12 coefficients representing the spectral energy in each of the 12 equal tempered pitches in western music. This allows us to understand the distribution of pitch when relating it to specific emotions.
-#### Why is this important?
-This allows us to understand the distribution of pitch when relating it to specific emotions.
->>>>>>> 9f3204ee979179b5898fedccf7739b6e6b01d211
 #### Algorithm
 
 #### Example Extraction
