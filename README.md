@@ -92,7 +92,10 @@ When tasked with categorizing between two emotions, our model performs extremely
 
 
 ## Understanding Feature Extraction 
-//TODO: Add the following sections to each of the features listed below: Why is this feature important?, Algorithm for extraction
+
+In the following section you will learn about the features used in the models trained above. Each python algorithm displayed is derived from the open source python library "pyAudioAnalysis". All example extractions are implementations of the algorithm shown with the same parameters set consistent as outlined in the previous section. Graph values are the mean across all audio files of a particular emotion, with one standard deviation shown as an error bar.
+
+//TODO: Add the following sections to each of the features listed below: Why is this feature important?, mathematical representation of algorithms
 ### Zero Crossing Rate
 #### Description
 Zero Crossing Rate is the rate of sign-changes across a signal (the rate at which the signal changes from positive negative or from negative to positive). 
