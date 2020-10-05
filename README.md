@@ -360,7 +360,6 @@ This gives insight into the distribution and spread of the spectral energy in th
 #### Example Extraction
 ![](example_extraction_graphs/chroma_std.png)
 
-### Chroma Deviation
 ## Works Cited (WIP)
 
 1.	F. S. A., V. K. V.R., R. S. A., A. Jayakumar and B. A. P., "Speaker Independent Automatic Emotion Recognition from Speech: A Comparison of MFCCs and Discrete Wavelet Transforms," 2009 International Conference on Advances in Recent Technologies in Communication and Computing, Kottayam, Kerala, 2009, pp. 528-531, doi: 10.1109/ARTCom.2009.231.
