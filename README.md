@@ -112,7 +112,7 @@ In Python:
         return np.float64(count_zero) / np.float64(count - 1.0)
 
 #### Example Extraction
-//TODO
+![](example_extraction_graphs/zcr.png)
 ### Energy
 #### Description
 Energy is defined as the area under the squared magnitude of the considered signal
@@ -130,7 +130,7 @@ In Python:
         return np.sum(frame ** 2) / np.float64(len(frame))
 
 #### Example Extraction
-![](zcr.png)
+![](example_extraction_graphs/energy.png)
 ### Entropy of Energy
 #### Description
 The entropy of energy is defined as the average level of "information" or "uncertainty" inherent within a signal's energy
@@ -161,7 +161,7 @@ In Python:
         return entropy
 
 #### Example Extraction
-//TODO
+![](example_extraction_graphs/energy_entropy.png)
 ### Spectral Centroid
 #### Description
 The spectral centroid characterizes a signal's spectrum, the amount of vibration at each individual frequency, defined by the spectrum's center of mass. 
@@ -199,7 +199,8 @@ In Python:
         return centroid, spread
 
 #### Example Extraction
-//TODO
+![](example_extraction_graphs/spectral_centriod.png)
+
 ### Spectral Entropy
 #### Description
 Spectral Entropy is defined to be the entropy of the power spectral density of a signal. The power spectral density of a signal describes the distribution of power into frequency components composing that signal.
@@ -242,7 +243,8 @@ In Python:
 
 
 #### Example Extraction
-//TODO
+![](example_extraction_graphs/spectral_entropy.png)
+
 ### Spectral Flux
 #### Description
 Spectral flux is a measure of the rate of change of the power spectrum of a signal. More precisely, spectral flux is usually calculated as the Euclidean distance between sequential frames.
@@ -271,7 +273,7 @@ In Python:
         return sp_flux
 
 #### Example Extraction
-//TODO
+![](example_extraction_graphs/spectral_flux.png)
 
 ### Spectral Roll-Off
 #### Description
@@ -301,6 +303,7 @@ In Python:
         return sp_rolloff
 
 #### Example Extraction
+![](example_extraction_graphs/spectral_rolloff.png)
 
 ### Mel Frequency Cepstral Coefficients
 #### Description
