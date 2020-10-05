@@ -92,7 +92,7 @@ When tasked with categorizing between two emotions, our model performs extremely
 
 
 ## Understanding Feature Extraction 
-//TODO: Add the following sections to each of the features listed below: Description, Why is this feature important?, Algorithm for extraction
+//TODO: Add the following sections to each of the features listed below: Why is this feature important?, Algorithm for extraction
 ### Zero Crossing Rate
 #### Description
 Zero Crossing Rate is the rate of sign-changes across a signal (the rate at which the signal changes from positive negative or from negative to positive). 
@@ -199,7 +199,7 @@ In Python:
         return centroid, spread
 
 #### Example Extraction
-![](example_extraction_graphs/spectral_centriod.png)
+![](example_extraction_graphs/spectral_centroid.png)
 
 ### Spectral Entropy
 #### Description
