@@ -284,7 +284,6 @@ Spectral Roll-off helps differentiate between harmonic content, characterized be
 
 #### Algorithm
 
-
 In Python:
 
     def spectral_rolloff(signal, c):
@@ -312,6 +311,28 @@ Mel-Frequency Cepstral Coefficient (MFCC) is an important and powerful analytica
 Many studies have linked the importance of MFCC analysis to emotion recognition [1][2][3]. 
 #### Algorithm
 {\rm Mel}({\rm f})=2595\log_{10}(1+{\rm f}/700)\eqno{\hbox{(1)}}
+
+Python:
+    def mfcc(fft_magnitude, fbank, num_mfcc_feats):
+        """
+        Computes the MFCCs of a frame, given the fft mag
+
+        ARGUMENTS:
+            fft_magnitude:  fft magnitude abs(FFT)
+            fbank:          filter bank (see mfccInitFilterBanks)
+        RETURN
+            ceps:           MFCCs (13 element vector)
+
+        Note:    MFCC calculation is, in general, taken from the 
+                scikits.talkbox library (MIT Licence),
+        #    with a small number of modifications to make it more 
+            compact and suitable for the pyAudioAnalysis Lib
+        """
+
+        mspec = np.log10(np.dot(fft_magnitude, fbank.T) + eps)
+        ceps = dct(mspec, type=2, norm='ortho', axis=-1)[:num_mfcc_feats]
+        return ceps
+
 #### Example Extraction
 ![](example_extraction_graphs/mfcc_1.png)
 ![](example_extraction_graphs/mfcc_2.png)
@@ -326,6 +347,7 @@ Many studies have linked the importance of MFCC analysis to emotion recognition 
 ![](example_extraction_graphs/mfcc_11.png)
 ![](example_extraction_graphs/mfcc_12.png)
 ![](example_extraction_graphs/mfcc_13.png)
+
 ### Chroma Vector
 #### Description
 A chroma vector is an approximation of the pitch class profiles present within a given frame. In music, this can be thought of as a classification of twelve tones.
@@ -334,6 +356,53 @@ A chroma vector is an approximation of the pitch class profiles present within a
 Chroma vectors allow for the capture of harmonic and melodic characteristics while remaining robust toward changes in timbre and instrumentation.
 
 #### Algorithm
+
+In Python:
+    def chroma_features(signal, sampling_rate, num_fft):
+
+        num_chroma, num_freqs_per_chroma = \
+            chroma_features_init(num_fft, sampling_rate)
+        chroma_names = ['A', 'A#', 'B', 'C', 'C#', 'D',
+                        'D#', 'E', 'F', 'F#', 'G', 'G#']
+        spec = signal ** 2
+        if num_chroma.max() < num_chroma.shape[0]:
+            C = np.zeros((num_chroma.shape[0],))
+            C[num_chroma] = spec
+            C /= num_freqs_per_chroma[num_chroma]
+        else:
+            I = np.nonzero(num_chroma > num_chroma.shape[0])[0][0]
+            C = np.zeros((num_chroma.shape[0],))
+            C[num_chroma[0:I - 1]] = spec
+            C /= num_freqs_per_chroma
+        final_matrix = np.zeros((12, 1))
+        newD = int(np.ceil(C.shape[0] / 12.0) * 12)
+        C2 = np.zeros((newD,))
+        C2[0:C.shape[0]] = C
+        C2 = C2.reshape(int(C2.shape[0] / 12), 12)
+
+        final_matrix = np.matrix(np.sum(C2, axis=0)).T
+        final_matrix /= spec.sum()
+
+        return chroma_names, final_matrix
+
+    def chroma_features_init(num_fft, sampling_rate):
+        """
+        This function initializes the chroma matrices used in the calculation
+        of the chroma features
+        """
+        freqs = np.array([((f + 1) * sampling_rate) /
+                        (2 * num_fft) for f in range(num_fft)])
+        cp = 27.50
+        num_chroma = np.round(12.0 * np.log2(freqs / cp)).astype(int)
+
+        num_freqs_per_chroma = np.zeros((num_chroma.shape[0],))
+
+        unique_chroma = np.unique(num_chroma)
+        for u in unique_chroma:
+            idx = np.nonzero(num_chroma == u)
+            num_freqs_per_chroma[idx] = idx[0].shape
+
+        return num_chroma, num_freqs_per_chroma
 
 #### Example Extraction
 ![](example_extraction_graphs/chroma_1.png)
