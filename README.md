@@ -313,7 +313,19 @@ Many studies have linked the importance of MFCC analysis to emotion recognition 
 #### Algorithm
 {\rm Mel}({\rm f})=2595\log_{10}(1+{\rm f}/700)\eqno{\hbox{(1)}}
 #### Example Extraction
-
+![](example_extraction_graphs/mfcc_1.png)
+![](example_extraction_graphs/mfcc_2.png)
+![](example_extraction_graphs/mfcc_3.png)
+![](example_extraction_graphs/mfcc_4.png)
+![](example_extraction_graphs/mfcc_5.png)
+![](example_extraction_graphs/mfcc_6.png)
+![](example_extraction_graphs/mfcc_7.png)
+![](example_extraction_graphs/mfcc_8.png)
+![](example_extraction_graphs/mfcc_9.png)
+![](example_extraction_graphs/mfcc_10.png)
+![](example_extraction_graphs/mfcc_11.png)
+![](example_extraction_graphs/mfcc_12.png)
+![](example_extraction_graphs/mfcc_13.png)
 ### Chroma Vector
 #### Description
 A chroma vector is an approximation of the pitch class profiles present within a given frame. In music, this can be thought of as a classification of twelve tones.
@@ -324,6 +336,18 @@ Chroma vectors allow for the capture of harmonic and melodic characteristics whi
 #### Algorithm
 
 #### Example Extraction
+![](example_extraction_graphs/chroma_1.png)
+![](example_extraction_graphs/chroma_2.png)
+![](example_extraction_graphs/chroma_3.png)
+![](example_extraction_graphs/chroma_4.png)
+![](example_extraction_graphs/chroma_5.png)
+![](example_extraction_graphs/chroma_6.png)
+![](example_extraction_graphs/chroma_7.png)
+![](example_extraction_graphs/chroma_8.png)
+![](example_extraction_graphs/chroma_9.png)
+![](example_extraction_graphs/chroma_10.png)
+![](example_extraction_graphs/chroma_11.png)
+![](example_extraction_graphs/chroma_12.png)
 
 ### Chroma Deviation
 
@@ -334,6 +358,7 @@ This gives insight into the distribution and spread of the spectral energy in th
 #### Algorithm
 
 #### Example Extraction
+![](example_extraction_graphs/chroma_std.png)
 
 ### Chroma Deviation
 ## Works Cited (WIP)
