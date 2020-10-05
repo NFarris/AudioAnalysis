@@ -318,7 +318,8 @@ Many studies have linked the importance of MFCC analysis to emotion recognition 
 #### Algorithm
 {\rm Mel}({\rm f})=2595\log_{10}(1+{\rm f}/700)\eqno{\hbox{(1)}}
 
-Python:
+In Python:
+
     def mfcc(fft_magnitude, fbank, num_mfcc_feats):
         """
         Computes the MFCCs of a frame, given the fft mag
