@@ -358,6 +358,7 @@ Chroma vectors allow for the capture of harmonic and melodic characteristics whi
 #### Algorithm
 
 In Python:
+
     def chroma_features(signal, sampling_rate, num_fft):
 
         num_chroma, num_freqs_per_chroma = \
