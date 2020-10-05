@@ -97,7 +97,10 @@ When tasked with categorizing between two emotions, our model performs extremely
 #### Description
 Zero Crossing Rate is the rate of sign-changes across a signal (the rate at which the signal changes from positive negative or from negative to positive). 
 #### Why is this important?
-This feature is key in classifying percussive sounds. //TODO expand this section
+This feature is key in classifying percussive sounds. One study analyzed ZCR for Anger, Fear, Neutral, and Happy signals. The study noted that higher peaks were found for Happy and Anger emotions. The study did not calculate if these differences were statistically [4]. (maybe ZCR is not important for emotion)
+
+Specific to this data set, the ZCR likely varies largely from person to person since it is highly dependent on whether an individual thinks that a specific emotion should have percussive information. As we continue to analyze more data it will be useful to look at the distribution of the ZCR between individuals.
+
 #### Algorithm
 ![](https://wikimedia.org/api/rest_v1/media/math/render/svg/cda9c9054c26350f517732f08eb791d232b7c1ba)
 
@@ -117,7 +120,7 @@ In Python:
 #### Description
 Energy is defined as the area under the squared magnitude of the considered signal
 #### Why is this important?
-//TODO
+The energy of a signal loosely relates to the amount of spectral information in a signal.
 #### Algorithm
 ![](https://wikimedia.org/api/rest_v1/media/math/render/svg/41b72bb00407a25b74769848f2920bb99a0fb1be)
 
@@ -135,7 +138,7 @@ In Python:
 #### Description
 The entropy of energy is defined as the average level of "information" or "uncertainty" inherent within a signal's energy
 #### Why is this important?
-//TODO
+The signal with high entropy of energy would a signal that varies largely in the energy throughout. Entropy can be reduced through signal compression and increased through signal expansion. To accurately measure the entropy of the different emotions, we need to make sure we are not including parts of the signal where the individual is not speaking.
 #### Algorithm
 ![](https://wikimedia.org/api/rest_v1/media/math/render/svg/bfe3616dee43f6287d4a4e2a557de8d48ad24926)
 
@@ -205,7 +208,7 @@ In Python:
 #### Description
 Spectral Entropy is defined to be the entropy of the power spectral density of a signal. The power spectral density of a signal describes the distribution of power into frequency components composing that signal.
 #### Why is this important?
-//TODO
+Signals with high spectral entropy will have a large spectral distribution. For reference, a sine wave has very low spectral entropy while white noise has a very high spectral entropy. One study found that the use of spectral entropy showed an improvement in speech recognition when used with MFCC features, however using only spectral entropy did not perform better than using only MFCC [5].
 #### Algorithm
 Power Spectral Density:
 
@@ -250,7 +253,7 @@ In Python:
 Spectral flux is a measure of the rate of change of the power spectrum of a signal. More precisely, spectral flux is usually calculated as the Euclidean distance between sequential frames.
 
 #### Why is this important?
-//TODO
+Spectral flux relates to how fast the pitch changes in time.
 #### Algorithm
 //TODO Write formal definition
 
@@ -434,5 +437,6 @@ This gives insight into the distribution and spread of the spectral energy in th
 
 1.	F. S. A., V. K. V.R., R. S. A., A. Jayakumar and B. A. P., "Speaker Independent Automatic Emotion Recognition from Speech: A Comparison of MFCCs and Discrete Wavelet Transforms," 2009 International Conference on Advances in Recent Technologies in Communication and Computing, Kottayam, Kerala, 2009, pp. 528-531, doi: 10.1109/ARTCom.2009.231.
 2.	K. V. Krishna Kishore and P. Krishna Satish, "Emotion recognition in speech using MFCC and wavelet features," 2013 3rd IEEE International Advance Computing Conference (IACC), Ghaziabad, 2013, pp. 842-847, doi: 10.1109/IAdCC.2013.6514336.
-3.	https://doi.org/10.1016/j.procs.2015.10.020
-
+3. https://doi.org/10.1016/j.procs.2015.10.020
+4. https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8228105
+5. https://www.researchgate.net/profile/Sven_Nordholm/publication/247612912_Spectral_entropy_as_speech_features_for_speech_recognition/links/54843daf0cf2e5f7ceaccbb9/Spectral-entropy-as-speech-features-for-speech-recognition.pdf
