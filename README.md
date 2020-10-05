@@ -122,8 +122,6 @@ In Python:
 |---|---|
 |![](example_extraction_graphs_individual/zcr.png)|![](example_extraction_graphs_big4/zcr.png)|
 
-
-![](example_extraction_graphs_individual/zcr.png)
 ### Energy
 #### Description
 Energy is defined as the area under the squared magnitude of the considered signal
@@ -141,7 +139,10 @@ In Python:
         return np.sum(frame ** 2) / np.float64(len(frame))
 
 #### Example Extraction
-![](example_extraction_graphs_individual/energy.png)
+|Individual|Big 4|
+|---|---|
+|![](example_extraction_graphs_individual/energy.png)|![](example_extraction_graphs_big4/energy.png)|
+
 ### Entropy of Energy
 #### Description
 The entropy of energy is defined as the average level of "information" or "uncertainty" inherent within a signal's energy
@@ -172,7 +173,9 @@ In Python:
         return entropy
 
 #### Example Extraction
-![](example_extraction_graphs_individual/energy_entropy.png)
+|Individual|Big 4|
+|---|---|
+|![](example_extraction_graphs_individual/energy_entropy.png)|![](example_extraction_graphs_big4/energy_entropy.png)|
 ### Spectral Centroid
 #### Description
 The spectral centroid characterizes a signal's spectrum, the amount of vibration at each individual frequency, defined by the spectrum's center of mass. 
@@ -210,7 +213,9 @@ In Python:
         return centroid, spread
 
 #### Example Extraction
-![](example_extraction_graphs_individual/spectral_centroid.png)
+|Individual|Big 4|
+|---|---|
+|![](example_extraction_graphs_individual/spectral_centroid.png)|![](example_extraction_graphs_big4/spectral_centroid.png)|
 
 ### Spectral Entropy
 #### Description
@@ -254,7 +259,9 @@ In Python:
 
 
 #### Example Extraction
-![](example_extraction_graphs_individual/spectral_entropy.png)
+|Individual|Big 4|
+|---|---|
+|![](example_extraction_graphs_individual/spectral_entropy.png)|![](example_extraction_graphs_big4/spectral_entropy.png)|
 
 ### Spectral Flux
 #### Description
@@ -284,7 +291,9 @@ In Python:
         return sp_flux
 
 #### Example Extraction
-![](example_extraction_graphs_individual/spectral_flux.png)
+|Individual|Big 4|
+|---|---|
+|![](example_extraction_graphs_individual/spectral_flux.png)|![](example_extraction_graphs_big4/spectral_flux.png)|
 
 ### Spectral Roll-Off
 #### Description
@@ -313,7 +322,9 @@ In Python:
         return sp_rolloff
 
 #### Example Extraction
-![](example_extraction_graphs_individual/spectral_rolloff.png)
+|Individual|Big 4|
+|---|---|
+|![](example_extraction_graphs_individual/spectral_rolloff.png)|![](example_extraction_graphs_big4/spectral_rolloff.png)|
 
 ### Mel Frequency Cepstral Coefficients
 #### Description
@@ -346,19 +357,21 @@ In Python:
         return ceps
 
 #### Example Extraction
-![](example_extraction_graphs_individual/mfcc_1.png)
-![](example_extraction_graphs_individual/mfcc_2.png)
-![](example_extraction_graphs_individual/mfcc_3.png)
-![](example_extraction_graphs_individual/mfcc_4.png)
-![](example_extraction_graphs_individual/mfcc_5.png)
-![](example_extraction_graphs_individual/mfcc_6.png)
-![](example_extraction_graphs_individual/mfcc_7.png)
-![](example_extraction_graphs_individual/mfcc_8.png)
-![](example_extraction_graphs_individual/mfcc_9.png)
-![](example_extraction_graphs_individual/mfcc_10.png)
-![](example_extraction_graphs_individual/mfcc_11.png)
-![](example_extraction_graphs_individual/mfcc_12.png)
-![](example_extraction_graphs_individual/mfcc_13.png)
+|Individual|Big 4|
+|---|---|
+|![](example_extraction_graphs_individual/mfcc_1.png)|![](example_extraction_graphs_big4/mfcc_1.png)|
+|![](example_extraction_graphs_individual/mfcc_2.png)|![](example_extraction_graphs_big4/mfcc_2.png)|
+|![](example_extraction_graphs_individual/mfcc_3.png)|![](example_extraction_graphs_big4/mfcc_3.png)|
+|![](example_extraction_graphs_individual/mfcc_4.png)|![](example_extraction_graphs_big4/mfcc_4.png)|
+|![](example_extraction_graphs_individual/mfcc_5.png)|![](example_extraction_graphs_big4/mfcc_5.png)|
+|![](example_extraction_graphs_individual/mfcc_6.png)|![](example_extraction_graphs_big4/mfcc_6.png)|
+|![](example_extraction_graphs_individual/mfcc_7.png)|![](example_extraction_graphs_big4/mfcc_7.png)|
+|![](example_extraction_graphs_individual/mfcc_8.png)|![](example_extraction_graphs_big4/mfcc_8.png)|
+|![](example_extraction_graphs_individual/mfcc_9.png)|![](example_extraction_graphs_big4/mfcc_9.png)|
+|![](example_extraction_graphs_individual/mfcc_10.png)|![](example_extraction_graphs_big4/mfcc_10.png)|
+|![](example_extraction_graphs_individual/mfcc_11.png)|![](example_extraction_graphs_big4/mfcc_11.png)|
+|![](example_extraction_graphs_individual/mfcc_12.png)|![](example_extraction_graphs_big4/mfcc_12.png)|
+|![](example_extraction_graphs_individual/mfcc_13.png)|![](example_extraction_graphs_big4/mfcc_13.png)|
 
 ### Chroma Vector
 #### Description
@@ -418,18 +431,20 @@ In Python:
         return num_chroma, num_freqs_per_chroma
 
 #### Example Extraction
-![](example_extraction_graphs_individual/chroma_1.png)
-![](example_extraction_graphs_individual/chroma_2.png)
-![](example_extraction_graphs_individual/chroma_3.png)
-![](example_extraction_graphs_individual/chroma_4.png)
-![](example_extraction_graphs_individual/chroma_5.png)
-![](example_extraction_graphs_individual/chroma_6.png)
-![](example_extraction_graphs_individual/chroma_7.png)
-![](example_extraction_graphs_individual/chroma_8.png)
-![](example_extraction_graphs_individual/chroma_9.png)
-![](example_extraction_graphs_individual/chroma_10.png)
-![](example_extraction_graphs_individual/chroma_11.png)
-![](example_extraction_graphs_individual/chroma_12.png)
+|Individual|Big 4|
+|---|---|
+|![](example_extraction_graphs_individual/chroma_1.png)|![](example_extraction_graphs_big4/chroma_1.png)|
+|![](example_extraction_graphs_individual/chroma_2.png)|![](example_extraction_graphs_big4/chroma_2.png)|
+|![](example_extraction_graphs_individual/chroma_3.png)|![](example_extraction_graphs_big4/chroma_3.png)|
+|![](example_extraction_graphs_individual/chroma_4.png)|![](example_extraction_graphs_big4/chroma_4.png)|
+|![](example_extraction_graphs_individual/chroma_5.png)|![](example_extraction_graphs_big4/chroma_5.png)|
+|![](example_extraction_graphs_individual/chroma_6.png)|![](example_extraction_graphs_big4/chroma_6.png)|
+|![](example_extraction_graphs_individual/chroma_7.png)|![](example_extraction_graphs_big4/chroma_7.png)|
+|![](example_extraction_graphs_individual/chroma_8.png)|![](example_extraction_graphs_big4/chroma_8.png)|
+|![](example_extraction_graphs_individual/chroma_9.png)|![](example_extraction_graphs_big4/chroma_9.png)|
+|![](example_extraction_graphs_individual/chroma_10.png)|![](example_extraction_graphs_big4/chroma_10.png)|
+|![](example_extraction_graphs_individual/chroma_11.png)|![](example_extraction_graphs_big4/chroma_11.png)|
+|![](example_extraction_graphs_individual/chroma_12.png)|![](example_extraction_graphs_big4/chroma_12.png)|
 
 ### Chroma Deviation
 
@@ -440,7 +455,9 @@ This gives insight into the distribution and spread of the spectral energy in th
 #### Algorithm
 
 #### Example Extraction
-![](example_extraction_graphs_individual/chroma_std.png)
+|Individual|Big 4|
+|---|---|
+|![](example_extraction_graphs_individual/chroma_std.png)|![](example_extraction_graphs_big4/chroma_std.png)|
 
 ## Works Cited (WIP)
 
