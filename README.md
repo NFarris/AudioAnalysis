@@ -459,6 +459,26 @@ This gives insight into the distribution and spread of the spectral energy in th
 |---|---|
 |![](example_extraction_graphs_individual/chroma_std.png)|![](example_extraction_graphs_big4/chroma_std.png)|
 
+## Understanding Feature Aggregation
+
+### Example Extraction and Aggregation
+
+For this example the following parameters will be used:
+- Mid-term Window Step = 1.0 seconds
+- Mid-term Window Size = 1.0 seconds
+- Short-term Window Step = 0.05 seconds (50ms)
+- Short-term Window Size = 0.05 seconds (50ms)
+- Audio file length = 5 seconds
+
+#### Short-Term
+
+Lets say you have a 5 second clip, using a Short-term Window Step of .05 seconds and a Short-term Window Size of .05 seconds. Each of the 34 features discussed above will be extracted for every 50ms, thus you end up with 100 feature vectors of size 34x1, totaling a 34x100 matrix. Next the deltas between each time step will be calculated according to the equation delta = feature_vector - feature_vector_prev. The first time stamp will have all deltas set to 0. Each delta vector is concatenated onto its respective feature vector resulting in a size of 68x1 for each vector, totaling in a 68x100 matrix for the entire 5 second audio clip.
+
+#### Mid-Term
+
+This 68x100 matrix is then passed on to be aggregated according to our Mid-term Window Size and Step. For this example, we will be using a Mid-term Window Size of 1 second and a Mid-term Window Step of 1 second. Our Short-term features are aggregated according to the ratio between the Mid-term and Short-term window size and step. For our example, this ratio is 20 for both Window Size and Step, thus the Short-term features are split into 5 matrices of size 68x20. Each matrix has its mean and standard deviation taken across time per feature, resulting in a 136x1 mid-term feature vector after flattening. This is done for all 5 matrices, resulting in a 136x5 Mid-term Feature Matrix. Finally, the mean is taken across the first axis resulting in a 136x1 feature vector representing our 5 second audio clip.
+
+
 ## Works Cited (WIP)
 
 1.	F. S. A., V. K. V.R., R. S. A., A. Jayakumar and B. A. P., "Speaker Independent Automatic Emotion Recognition from Speech: A Comparison of MFCCs and Discrete Wavelet Transforms," 2009 International Conference on Advances in Recent Technologies in Communication and Computing, Kottayam, Kerala, 2009, pp. 528-531, doi: 10.1109/ARTCom.2009.231.
