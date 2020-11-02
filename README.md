@@ -472,7 +472,7 @@ For this example the following parameters will be used:
 - Mid-term Window Size = 1.0 seconds
 - Short-term Window Step = 0.05 seconds (50ms)
 - Short-term Window Size = 0.05 seconds (50ms)
-- Audio file length = 5 seconds
+- Audio file length = 5.0 seconds
 
 #### Short-Term
 
