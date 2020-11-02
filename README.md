@@ -1,5 +1,20 @@
 # Georgia Tech Robotic Musicianship Prosody Audio Analysis
 
+## Table on Contents
+
+[Background](https://github.com/NFarris/AudioAnalysis#background)
+
+[Purpose](https://github.com/NFarris/AudioAnalysis#purpose)
+
+[Methodology](https://github.com/NFarris/AudioAnalysis#methodology)
+
+[Initial Results](https://github.com/NFarris/AudioAnalysis#results-from-pyaudioanalysis-feature-extraction-and-model-training)
+
+[Understanding Feature Extraction](https://github.com/NFarris/AudioAnalysis#understanding-feature-extraction)
+
+[Understanding Feature Aggregation](https://github.com/NFarris/AudioAnalysis#understanding-feature-aggregation)
+
+
 ## Background
 The Robotic Musicianship group aims to facilitate meaningful musical interactions between humans and machines, leading to novel musical experiences and outcomes. In our research, we combine computational modeling approaches for perception, interaction, and improvisation, with novel approaches for generating acoustic responses in physical and visual manners.
 
@@ -95,7 +110,30 @@ When tasked with categorizing between two emotions, our model performs extremely
 
 In the following section you will learn about the features used in the models trained above. Each python algorithm displayed is derived from the open source python library "pyAudioAnalysis". All example extractions are implementations of the algorithm shown with the same parameters set consistent as outlined in the previous section. Graph values are the mean across all audio files of a particular emotion, with one standard deviation shown as an error bar.
 
-//TODO: Add the following sections to each of the features listed below: Why is this feature important?, mathematical representation of algorithms
+### Feature Table on Contents
+
+[Zero Crossing Rate](https://github.com/NFarris/AudioAnalysis#zero-crossing-rate)
+
+[Energy](https://github.com/NFarris/AudioAnalysis#energy)
+
+[Entropy of Energy](https://github.com/NFarris/AudioAnalysis#entropy-of-energy)
+
+[Spectral Centroid](https://github.com/NFarris/AudioAnalysis#spectral-centroid)
+
+[Spectral Spread](https://github.com/NFarris/AudioAnalysis#spectral-spread)
+
+[Spectral Entropy](https://github.com/NFarris/AudioAnalysis#spectral-entropy)
+
+[Spectral Flux](https://github.com/NFarris/AudioAnalysis#spectral-flux)
+
+[Spectral Rolloff](https://github.com/NFarris/AudioAnalysis#spectral-roll-off)
+
+[MFCCs](https://github.com/NFarris/AudioAnalysis#mel-frequency-cepstral-coefficients)
+
+[Chroma Vector](https://github.com/NFarris/AudioAnalysis#chroma-vector)
+
+[Chroma Deviation](https://github.com/NFarris/AudioAnalysis#chroma-deviation)
+
 ### Zero Crossing Rate
 #### Description
 Zero Crossing Rate is the rate of sign-changes across a signal (the rate at which the signal changes from positive negative or from negative to positive). 
