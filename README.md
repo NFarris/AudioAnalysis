@@ -461,6 +461,10 @@ This gives insight into the distribution and spread of the spectral energy in th
 
 ## Understanding Feature Aggregation
 
+Below you will find a diagram to model how the features described above are extracted and aggregated across our Mid-term and Short-term Window Size and Steps. Additionally, an example aggregation has been included to demonstrate the vector and matrix sizes at various points throughout the process.
+
+![](models/feature_aggregation_model.png)
+
 ### Example Extraction and Aggregation
 
 For this example the following parameters will be used:
