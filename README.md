@@ -8,11 +8,15 @@
 
 [Methodology](https://github.com/NFarris/AudioAnalysis#methodology)
 
-[Initial Results](https://github.com/NFarris/AudioAnalysis#results-from-pyaudioanalysis-feature-extraction-and-model-training)
+[Results](https://github.com/NFarris/AudioAnalysis#results-from-pyaudioanalysis-feature-extraction-and-model-training)
 
 [Understanding Feature Extraction](https://github.com/NFarris/AudioAnalysis#understanding-feature-extraction)
 
 [Understanding Feature Aggregation](https://github.com/NFarris/AudioAnalysis#understanding-feature-aggregation)
+
+[Implementing Feature Selection](https://github.com/NFarris/AudioAnalysis#implementing-feature-selection)
+
+[Next Steps](https://github.com/NFarris/AudioAnalysis#next-steps)
 
 
 ## Background
@@ -520,6 +524,48 @@ Lets say you have a 5 second clip, using a Short-term Window Step of .05 seconds
 
 This 68x100 matrix is then passed on to be aggregated according to our Mid-term Window Size and Step. For this example, we will be using a Mid-term Window Size of 1 second and a Mid-term Window Step of 1 second. Our Short-term features are aggregated according to the ratio between the Mid-term and Short-term window size and step. For our example, this ratio is 20 for both Window Size and Step, thus the Short-term features are split into 5 matrices of size 68x20. Each matrix has its mean and standard deviation taken across time per feature, resulting in a 136x1 mid-term feature vector after flattening. This is done for all 5 matrices, resulting in a 136x5 Mid-term Feature Matrix. Finally, the mean is taken across the first axis resulting in a 136x1 feature vector representing our 5 second audio clip.
 
+## Implementing Feature Selection
+
+The following section will outline the process by which we accomplished feature selection on the 136 features outline in the above section of feature aggregation. Our implementation of Feature Selection follows an additive approach. Initially, we start with an empty permanent feature set and each feature is trained on its own. The feature with the highest f1 score is selected and added to our permanent feature set. This process is repeated until all features have been added to the permanent feature set. Finally, we will plot the f1 score vs features used in model training.
+
+For 136 features, an additive feature selection training loop would require the training and f1 validation of 9316 models. Our initial training and validation was based on implementations using the python library sklearn. Unfortunately, sklearn does not provide native gpu training support and thus performing an additive feature selection using sklearn is not feasible with respect to training time. Our solution is to continue to use the feature selection and aggregation outlined above, and to replace the sklearn models with a tensorflow feed forward neural net. All of these models seek to find statistical correlations between our features and the emotional classification, thus the particular model should have minimal affect on the analysis of feature importance performed by additive feature selection. Training was done on a RTX 3090 using CUDA v11 and took just under 24 hours to train and validate all 9316 models. All models were trained sequentially and thus parallel training could be implemented to achieve an increase in performance. 
+
+Displayed below is our model architecture used to analysis the importance of each feature via additive feature selection. 
+
+    model = tf.keras.Sequential([
+            tf.keras.Input(feature_matrix.shape[1]),
+            tf.keras.layers.Dense(136, activation="relu"),
+            tf.keras.layers.Dense(136, activation="relu"),
+            tf.keras.layers.Dense(20),
+        ])   
+        model.compile(
+            optimizer=tf.keras.optimizers.Adam(),
+            loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+            metrics=['accuracy'],
+        )
+        model.fit(feature_matrix, labels, epochs=5, verbose=0)
+        return model
+
+Here is the graph of F1 scores plotted against the feature added most recently. This graph read from left to right shows the order in which features were added. Notice how the plot approaches a logistical max around 50% accuracy within the first 30 of 136 features added.
+
+![](models/feature_add.png)
+
+
+## Next Steps
+
+This section servers to notate where this project left off at the end of November 2020 so that work may be continued in semesters moving forward.
+
+Further development ideas for music information retrieval:
+
+- Inclusion of more singers (2 more have been recorded, but not trained on)
+- Implementation of PCA and comparison with additive feature selection
+- Further segmentation of audio clips and pipelined cleaning
+
+Thus far the majority of analysis has focused on the understanding of music information retrieval and the relevance of the features extracted. Further development should shift focus to the understanding of model architecture for audio analysis. Potential model arhictectures to look into include:
+
+- Refinement of activation functions as currently relu is used for all layers
+- Introduction of convolution layers to a model that takes in a flattened image of the signal to allow for the learning of hidden features
+- Split model into identification of each second and take majority vote to increase data size.
 
 ## Works Cited (WIP)
 
