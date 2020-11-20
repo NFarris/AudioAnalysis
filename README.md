@@ -566,6 +566,7 @@ Thus far the majority of analysis has focused on the understanding of music info
 - Refinement of activation functions as currently relu is used for all layers
 - Introduction of convolution layers to a model that takes in a flattened image of the signal to allow for the learning of hidden features
 - Split model into identification of each second and take majority vote to increase data size.
+- Parallel model training during feature selection
 
 ## Works Cited (WIP)
 
