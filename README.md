@@ -546,7 +546,7 @@ Displayed below is our model architecture used to analysis the importance of eac
         model.fit(feature_matrix, labels, epochs=5, verbose=0)
         return model
 
-Here is the graph of F1 scores plotted against the feature added most recently. This graph read from left to right shows the order in which features were added. Notice how the plot approaches a logistical max around 50% accuracy within the first 30 of 136 features added.
+Here is the graph of F1 scores plotted against the feature added most recently. This graph read from left to right shows the order in which features were added. Notice how the plot approaches a logistical max around 50% accuracy within the first 30 of 136 features added. The max accuracy achieved was 52.00%. 
 
 ![](models/feature_add.png)
 
