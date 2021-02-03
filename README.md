@@ -551,7 +551,7 @@ Here is the graph of F1 scores plotted against the feature added most recently. 
 ![](models/feature_add.png)
 
 
-## Next Steps
+## Next Steps as of December 2020
 
 This section servers to notate where this project left off at the end of November 2020 so that work may be continued in semesters moving forward.
 
@@ -561,12 +561,31 @@ Further development ideas for music information retrieval:
 - Implementation of PCA and comparison with additive feature selection
 - Further segmentation of audio clips and pipelined cleaning
 
-Thus far the majority of analysis has focused on the understanding of music information retrieval and the relevance of the features extracted. Further development should shift focus to the understanding of model architecture for audio analysis. Potential model arhictectures to look into include:
+Thus far the majority of analysis has focused on the understanding of music information retrieval and the relevance of the features extracted. Further development should shift focus to the understanding of model architecture for audio analysis. Potential model architectures to look into include:
 
 - Refinement of activation functions as currently relu is used for all layers
 - Introduction of convolution layers to a model that takes in a flattened image of the signal to allow for the learning of hidden features
 - Split model into identification of each second and take majority vote to increase data size.
 - Parallel model training during feature selection
+
+## Model Generalization
+
+This section serves to continue the work from Fall 2020 into Spring 2021. Our first goal is to develop are more general model for emotion detection via the expansion of our dataset to include 3, as oppose to 1, singers. 
+In the following section we will explore the results from previous model architectures when trained on this expanded dataset.
+
+| Model | Classification | Single Singer Best Accuracy | Single Singer Best F1 | 3 Singers Best Accuracy | 3 Singers Best F1 |
+|---|---|---|---|---|---|
+| KNN | Big4 | 56.1 | 56.2 | | |
+| SVM | Big4  | 66.5 | 65.3 |  | |
+| Extra Trees |  Big4 | 64.6 | 64.3 |  | |
+| Gradient Boosting | Big4  | 67.0 | 66.7 |  | |
+| Random Forest | Big4  | 63.5 | 63.2 |  | |
+| KNN | Individual | 33.8 | 32.1 |  | |
+| SVM | Individual | 49.1 | 48.1 |  | |
+| Extra Trees | Individual | 44.3 | 42.8 |  | |
+| Gradient Boosting | Individual | 47.2 | 46.6 |  | |
+| Random Forest | Individual | 43.8 | 42.3 |  | |
+|SVM|Love Vs Disgust|98.9|98.9|| |
 
 ## Works Cited (WIP)
 
