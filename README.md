@@ -575,17 +575,17 @@ In the following section we will explore the results from previous model archite
 
 | Model | Classification | Single Singer Best Accuracy | Single Singer Best F1 | 3 Singers Best Accuracy | 3 Singers Best F1 |
 |---|---|---|---|---|---|
-| KNN | Big4 | 56.1 | 56.2 | | |
-| SVM | Big4  | 66.5 | 65.3 |  | |
-| Extra Trees |  Big4 | 64.6 | 64.3 |  | |
-| Gradient Boosting | Big4  | 67.0 | 66.7 |  | |
-| Random Forest | Big4  | 63.5 | 63.2 |  | |
+| KNN | Big4 | 56.1 | 56.2 | 57.9 | 57.9 |
+| SVM | Big4  | 66.5 | 65.3 | 60.6 | 60.7 |
+| Extra Trees |  Big4 | 64.6 | 64.3 | 63.5 | 63.6 |
+| Gradient Boosting | Big4  | 67.0 | 66.7 | 67.7 | 67.8 |
+| Random Forest | Big4  | 63.5 | 63.2 | 65.1 | 65.1 |
 | KNN | Individual | 33.8 | 32.1 | 32.5 | 32.0 |
 | SVM | Individual | 49.1 | 48.1 | 36.9 | 36.6 |
 | Extra Trees | Individual | 44.3 | 42.8 | 42.4 | 41.9 |
 | Gradient Boosting | Individual | 47.2 | 46.6 | 43.8 | 43.6 |
 | Random Forest | Individual | 43.8 | 42.3 | 43.8 | 43.3 |
-|SVM|Love Vs Disgust|98.9|98.9|| |
+|SVM|Love Vs Disgust|98.9|98.9| 93.0 | 93.0 |
 
 ## Works Cited (WIP)
 
