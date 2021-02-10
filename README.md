@@ -585,7 +585,7 @@ In the following section we will explore the results from previous model archite
 | Extra Trees | Individual | 44.3 | 42.8 | 42.4 | 41.9 |
 | Gradient Boosting | Individual | 47.2 | 46.6 | 43.8 | 43.6 |
 | Random Forest | Individual | 43.8 | 42.3 | 43.8 | 43.3 |
-|SVM|Love Vs Disgust|98.9|98.9| 93.0 | 93.0 |
+|SVM|Love Vs Disgust|98.9|98.9| 93.4 | 93.4 |
 
 ## Works Cited (WIP)
 
