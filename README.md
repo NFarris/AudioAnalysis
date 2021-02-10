@@ -578,7 +578,7 @@ In the following section we will explore the results from previous model archite
 | KNN | Big4 | 56.1 | 56.2 | 57.9 | 57.9 |
 | SVM | Big4  | 66.5 | 65.3 | 60.6 | 60.7 |
 | Extra Trees |  Big4 | 64.6 | 64.3 | 63.5 | 63.6 |
-| Gradient Boosting | Big4  | 67.0 | 66.7 | 67.7 | 67.8 |
+| Gradient Boosting | Big4  | 67.0 | 66.7 | 68.8 | 68.9 |
 | Random Forest | Big4  | 63.5 | 63.2 | 65.1 | 65.1 |
 | KNN | Individual | 33.8 | 32.1 | 32.5 | 32.0 |
 | SVM | Individual | 49.1 | 48.1 | 36.9 | 36.6 |
