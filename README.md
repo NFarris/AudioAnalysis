@@ -582,7 +582,7 @@ In the following section we will explore the results from previous model archite
 | Random Forest | Big4  | 63.5 | 63.2 | 65.1 | 65.1 |
 | KNN | Individual | 33.8 | 32.1 | 32.5 | 32.0 |
 | SVM | Individual | 49.1 | 48.1 | 36.9 | 36.6 |
-| Extra Trees | Individual | 44.3 | 42.8 | 42.4 | 41.9 |
+| Extra Trees | Individual | 44.3 | 42.8 | 42.7 | 42.2 |
 | Gradient Boosting | Individual | 47.2 | 46.6 | 43.8 | 43.6 |
 | Random Forest | Individual | 43.8 | 42.3 | 43.8 | 43.3 |
 |SVM|Love Vs Disgust|98.9|98.9| 93.4 | 93.4 |
